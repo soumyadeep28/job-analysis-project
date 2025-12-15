@@ -86,7 +86,7 @@
 
     <div class="result" id="result" style="display:none;">
         <h2>Analysis Result</h2>
-        <p><strong>Predicted interview focus score:</strong> <span id="score"></span></p>
+
 
         <h3>Skills and relative importance</h3>
         <div id="skills"></div>
@@ -125,9 +125,7 @@
             const data = await response.json();
             document.getElementById("result").style.display = "block";
 
-            // Overall score as percentage (0–100)
-            const focusPct = Math.round((data.predicted_score || 0) * 100);
-            document.getElementById("score").textContent = focusPct + " %";
+
 
             // Configured skills with green bars
             const skillsDiv = document.getElementById("skills");
