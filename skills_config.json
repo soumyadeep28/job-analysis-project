@@ -1,0 +1,784 @@
+{
+    "backend_engineer": {
+        "has_python": {
+            "skill": "python",
+            "probability": 0.4,
+            "keywords": [
+                "python",
+                "flask",
+                "django",
+                "fastapi"
+            ]
+        },
+        "has_java": {
+            "skill": "java",
+            "probability": 0.41,
+            "keywords": [
+                "java",
+                "spring",
+                "springboot",
+                "hibernate"
+            ]
+        },
+        "has_go": {
+            "skill": "go",
+            "probability": 0.25,
+            "keywords": [
+                "go",
+                "golang"
+            ]
+        },
+        "has_nodejs": {
+            "skill": "node.js",
+            "probability": 0.2,
+            "keywords": [
+                "node",
+                "nodejs",
+                "express",
+                "nest"
+            ]
+        },
+        "has_sql": {
+            "skill": "sql",
+            "probability": 0.6,
+            "keywords": [
+                "sql",
+                "mysql",
+                "postgresql",
+                "oracle"
+            ]
+        },
+        "has_nosql": {
+            "skill": "nosql",
+            "probability": 0.35,
+            "keywords": [
+                "mongo",
+                "mongodb",
+                "cassandra",
+                "redis"
+            ]
+        },
+        "has_docker": {
+            "skill": "docker",
+            "probability": 0.45,
+            "keywords": [
+                "dockerfile",
+                "docker compose",
+                "containerization",
+                "docker hub",
+                "image building",
+                "volume management",
+                "network configurations",
+                "multi-stage builds",
+                "security scanning",
+                "registry",
+                "daemon",
+                "cgroups",
+                "namespaces"
+            ]
+        },
+        "has_kubernetes": {
+            "skill": "kubernetes",
+            "probability": 0.4,
+            "keywords": [
+                "k8s",
+                "pods",
+                "deployments",
+                "services",
+                "ingresses",
+                "helm charts",
+                "kubectl",
+                "secrets",
+                "configmaps",
+                "persistent volumes",
+                "replicasets",
+                "cluster autoscaler",
+                "networking (CNI)",
+                "monitoring (Prometheus/Grafana)"
+            ]
+        },
+        "has_aws": {
+            "skill": "aws",
+            "probability": 0.3,
+            "keywords": [
+                "vpc",
+                "ec2",
+                "s3",
+                "lambda",
+                "iam",
+                "eks",
+                "rds",
+                "dynamodb",
+                "route 53",
+                "cloudformation",
+                "terraform",
+                "cloudwatch",
+                "sns",
+                "sqs",
+                "api gateway"
+            ]
+        },
+        "has_azure": {
+            "skill": "azure",
+            "probability": 0.25,
+            "keywords": [
+                "azure",
+                "azure devops"
+            ]
+        },
+        "has_gcp": {
+            "skill": "gcp",
+            "probability": 0.22,
+            "keywords": [
+                "gcp",
+                "google cloud"
+            ]
+        },
+        "has_caching": {
+            "skill": "caching (e.g., Redis, Memcached)",
+            "probability": 0.5,
+            "keywords": [
+                "caching",
+                "redis",
+                "memcached"
+            ]
+        },
+        "has_testing": {
+            "skill": "unit/integration testing",
+            "probability": 0.4,
+            "keywords": [
+                "pytest",
+                "jest",
+                "testing",
+                "tdd"
+            ]
+        },
+        "has_springboot_detailed": {
+            "skill": "Spring Boot (Detailed)",
+            "probability": 0.55,
+            "keywords": [
+                "springboot",
+                "spring mvc",
+                "spring security",
+                "spring data jpa",
+                "restful apis",
+                "microservices",
+                "actuator",
+                "devtools",
+                "maven",
+                "gradle",
+                "aop",
+                "transaction management",
+                "junit",
+                "mockito"
+            ]
+        }
+    },
+    "ml_engineer": {
+        "has_python": {
+            "skill": "python",
+            "probability": 0.85,
+            "keywords": [
+                "python"
+            ]
+        },
+        "has_r": {
+            "skill": "r",
+            "probability": 0.3,
+            "keywords": [
+                "r",
+                "r studio"
+            ]
+        },
+        "has_tensorflow": {
+            "skill": "tensorflow",
+            "probability": 0.45,
+            "keywords": [
+                "tensorflow",
+                "tf"
+            ]
+        },
+        "has_pytorch": {
+            "skill": "pytorch",
+            "probability": 0.5,
+            "keywords": [
+                "pytorch",
+                "torch"
+            ]
+        },
+        "has_scikit_learn": {
+            "skill": "scikit-learn",
+            "probability": 0.6,
+            "keywords": [
+                "scikit",
+                "sklearn"
+            ]
+        },
+        "has_nlp": {
+            "skill": "nlp",
+            "probability": 0.35,
+            "keywords": [
+                "nlp",
+                "natural language"
+            ]
+        },
+        "has_computer_vision": {
+            "skill": "computer vision",
+            "probability": 0.3,
+            "keywords": [
+                "computer vision",
+                "opencv",
+                "cv"
+            ]
+        },
+        "has_machine_learning": {
+            "skill": "machine learning",
+            "probability": 0.8,
+            "keywords": [
+                "machine learning",
+                "ml"
+            ]
+        },
+        "has_deep_learning": {
+            "skill": "deep learning",
+            "probability": 0.65,
+            "keywords": [
+                "deep learning",
+                "dl"
+            ]
+        },
+        "has_aws_sagemaker": {
+            "skill": "aws sagemaker",
+            "probability": 0.25,
+            "keywords": [
+                "sagemaker"
+            ]
+        },
+        "has_azure_ml": {
+            "skill": "azure ml",
+            "probability": 0.2,
+            "keywords": [
+                "azure ml",
+                "azure machine learning"
+            ]
+        },
+        "has_mlops": {
+            "skill": "MLOps (e.g., Kubeflow, MLflow)",
+            "probability": 0.55,
+            "keywords": [
+                "mlops",
+                "kubeflow",
+                "mlflow",
+                "vertex ai",
+                "sagemaker",
+                "ci/cd for ml",
+                "model versioning",
+                "data versioning",
+                "model monitoring",
+                "drift detection",
+                "feature store",
+                "reproducibility",
+                "pipeline orchestration"
+            ]
+        },
+        "has_experiment_tracking": {
+            "skill": "experiment tracking",
+            "probability": 0.35,
+            "keywords": [
+                "wandb",
+                "neptune.ai",
+                "comet ml"
+            ]
+        },
+        "has_docker_ml": {
+            "skill": "Docker for ML Models",
+            "probability": 0.4,
+            "keywords": [
+                "dockerfile",
+                "docker compose",
+                "containerization",
+                "docker hub",
+                "image building",
+                "volume management",
+                "network configurations",
+                "multi-stage builds",
+                "security scanning",
+                "registry",
+                "daemon",
+                "cgroups",
+                "namespaces",
+                "gpu support",
+                "inference container"
+            ]
+        }
+    },
+    "ai_engineer": {
+        "has_python": {
+            "skill": "python",
+            "probability": 0.9,
+            "keywords": [
+                "python"
+            ]
+        },
+        "has_nlp": {
+            "skill": "nlp",
+            "probability": 0.6,
+            "keywords": [
+                "nlp",
+                "natural language"
+            ]
+        },
+        "has_computer_vision": {
+            "skill": "computer vision",
+            "probability": 0.5,
+            "keywords": [
+                "computer vision",
+                "opencv"
+            ]
+        },
+        "has_deep_learning": {
+            "skill": "deep learning",
+            "probability": 0.85,
+            "keywords": [
+                "deep learning",
+                "dl"
+            ]
+        },
+        "has_generative_ai": {
+            "skill": "generative ai",
+            "probability": 0.7,
+            "keywords": [
+                "generative ai",
+                "genai"
+            ]
+        },
+        "has_llms": {
+            "skill": "llms",
+            "probability": 0.75,
+            "keywords": [
+                "llm",
+                "large language model"
+            ]
+        },
+        "has_transformers": {
+            "skill": "transformers",
+            "probability": 0.65,
+            "keywords": [
+                "transformers",
+                "huggingface"
+            ]
+        },
+        "has_reinforcement_learning": {
+            "skill": "reinforcement learning",
+            "probability": 0.4,
+            "keywords": [
+                "reinforcement learning",
+                "rl"
+            ]
+        },
+        "has_vector_dbs": {
+            "skill": "vector databases (e.g., Pinecone, Chroma)",
+            "probability": 0.6,
+            "keywords": [
+                "vector db",
+                "pinecone",
+                "chroma",
+                "weaviate"
+            ]
+        },
+        "has_rag": {
+            "skill": "RAG (Retrieval-Augmented Generation)",
+            "probability": 0.55,
+            "keywords": [
+                "rag",
+                "retrieval-augmented generation",
+                "langchain",
+                "llama index"
+            ]
+        }
+    },
+    "devops_engineer": {
+        "has_aws": {
+            "skill": "aws",
+            "probability": 0.55,
+            "keywords": [
+                "vpc",
+                "ec2",
+                "s3",
+                "lambda",
+                "iam",
+                "eks",
+                "rds",
+                "dynamodb",
+                "route 53",
+                "cloudformation",
+                "terraform",
+                "cloudwatch",
+                "sns",
+                "sqs",
+                "api gateway"
+            ]
+        },
+        "has_azure": {
+            "skill": "azure",
+            "probability": 0.4,
+            "keywords": [
+                "azure"
+            ]
+        },
+        "has_gcp": {
+            "skill": "gcp",
+            "probability": 0.35,
+            "keywords": [
+                "gcp",
+                "google cloud"
+            ]
+        },
+        "has_docker": {
+            "skill": "docker",
+            "probability": 0.7,
+            "keywords": [
+                "dockerfile",
+                "docker compose",
+                "containerization",
+                "docker hub",
+                "image building",
+                "volume management",
+                "network configurations",
+                "multi-stage builds",
+                "security scanning",
+                "registry",
+                "daemon",
+                "cgroups",
+                "namespaces"
+            ]
+        },
+        "has_kubernetes": {
+            "skill": "kubernetes",
+            "probability": 0.65,
+            "keywords": [
+                "k8s",
+                "pods",
+                "deployments",
+                "services",
+                "ingresses",
+                "helm charts",
+                "kubectl",
+                "secrets",
+                "configmaps",
+                "persistent volumes",
+                "replicasets",
+                "cluster autoscaler",
+                "networking (CNI)",
+                "monitoring (Prometheus/Grafana)"
+            ]
+        },
+        "has_jenkins": {
+            "skill": "jenkins",
+            "probability": 0.5,
+            "keywords": [
+                "jenkins"
+            ]
+        },
+        "has_terraform": {
+            "skill": "terraform",
+            "probability": 0.6,
+            "keywords": [
+                "terraform",
+                "iac"
+            ]
+        },
+        "has_ansible": {
+            "skill": "ansible",
+            "probability": 0.45,
+            "keywords": [
+                "ansible"
+            ]
+        },
+        "has_ci_cd": {
+            "skill": "ci/cd",
+            "probability": 0.75,
+            "keywords": [
+                "ci/cd",
+                "ci cd",
+                "pipeline"
+            ]
+        },
+        "has_linux": {
+            "skill": "linux",
+            "probability": 0.8,
+            "keywords": [
+                "linux",
+                "ubuntu",
+                "centos"
+            ]
+        },
+        "has_bash": {
+            "skill": "bash",
+            "probability": 0.7,
+            "keywords": [
+                "bash",
+                "shell script"
+            ]
+        },
+        "has_prometheus": {
+            "skill": "Prometheus & Grafana",
+            "probability": 0.5,
+            "keywords": [
+                "prometheus",
+                "grafana",
+                "monitoring",
+                "observability"
+            ]
+        },
+        "has_git": {
+            "skill": "Git & GitHub/GitLab",
+            "probability": 0.85,
+            "keywords": [
+                "git",
+                "github",
+                "gitlab",
+                "version control"
+            ]
+        }
+    },
+    "support_engineer": {
+        "has_linux": {
+            "skill": "linux",
+            "probability": 0.6,
+            "keywords": [
+                "linux"
+            ]
+        },
+        "has_windows_server": {
+            "skill": "windows server",
+            "probability": 0.55,
+            "keywords": [
+                "windows server",
+                "win server"
+            ]
+        },
+        "has_networking": {
+            "skill": "networking",
+            "probability": 0.7,
+            "keywords": [
+                "network",
+                "tcp/ip",
+                "firewall"
+            ]
+        },
+        "has_troubleshooting": {
+            "skill": "troubleshooting",
+            "probability": 0.85,
+            "keywords": [
+                "troubleshoot",
+                "debug"
+            ]
+        },
+        "has_customer_service": {
+            "skill": "customer service",
+            "probability": 0.9,
+            "keywords": [
+                "customer service",
+                "support"
+            ]
+        },
+        "has_zendesk": {
+            "skill": "zendesk",
+            "probability": 0.4,
+            "keywords": [
+                "zendesk"
+            ]
+        },
+        "has_jira": {
+            "skill": "jira",
+            "probability": 0.5,
+            "keywords": [
+                "jira"
+            ]
+        },
+        "has_sql_basics": {
+            "skill": "SQL Basics for querying logs/tickets",
+            "probability": 0.45,
+            "keywords": [
+                "sql query",
+                "log analysis",
+                "database basics"
+            ]
+        },
+        "has_scripting": {
+            "skill": "Scripting (e.g., Python/Bash for automation)",
+            "probability": 0.5,
+            "keywords": [
+                "scripting",
+                "automation",
+                "python script",
+                "bash"
+            ]
+        }
+    },
+    "data_scientist": {
+        "has_python": {
+            "skill": "python",
+            "probability": 0.75,
+            "keywords": [
+                "python"
+            ]
+        },
+        "has_r": {
+            "skill": "r",
+            "probability": 0.4,
+            "keywords": [
+                "r"
+            ]
+        },
+        "has_sql": {
+            "skill": "sql",
+            "probability": 0.7,
+            "keywords": [
+                "sql"
+            ]
+        },
+        "has_statistics": {
+            "skill": "statistics",
+            "probability": 0.65,
+            "keywords": [
+                "statistics",
+                "stats"
+            ]
+        },
+        "has_machine_learning": {
+            "skill": "machine learning",
+            "probability": 0.6,
+            "keywords": [
+                "machine learning",
+                "ml"
+            ]
+        },
+        "has_data_visualization": {
+            "skill": "data visualization",
+            "probability": 0.55,
+            "keywords": [
+                "visualization",
+                "viz"
+            ]
+        },
+        "has_tableau": {
+            "skill": "tableau",
+            "probability": 0.45,
+            "keywords": [
+                "tableau"
+            ]
+        },
+        "has_power_bi": {
+            "skill": "power bi",
+            "probability": 0.4,
+            "keywords": [
+                "power bi",
+                "powerbi"
+            ]
+        },
+        "has_spark": {
+            "skill": "spark",
+            "probability": 0.35,
+            "keywords": [
+                "spark",
+                "pyspark"
+            ]
+        },
+        "has_experiment_design": {
+            "skill": "A/B Testing & Experiment Design",
+            "probability": 0.5,
+            "keywords": [
+                "a/b testing",
+                "experiment design",
+                "causality"
+            ]
+        },
+        "has_big_data": {
+            "skill": "Big Data (e.g., Hadoop, Hive, Databricks)",
+            "probability": 0.3,
+            "keywords": [
+                "hadoop",
+                "hive",
+                "big data",
+                "databricks"
+            ]
+        }
+    },
+    "frontend_engineer": {
+        "has_javascript": {
+            "skill": "javascript",
+            "probability": 0.85,
+            "keywords": [
+                "javascript",
+                "js"
+            ]
+        },
+        "has_react": {
+            "skill": "react",
+            "probability": 0.7,
+            "keywords": [
+                "react",
+                "reactjs"
+            ]
+        },
+        "has_angular": {
+            "skill": "angular",
+            "probability": 0.5,
+            "keywords": [
+                "angular"
+            ]
+        },
+        "has_vue": {
+            "skill": "vue",
+            "probability": 0.4,
+            "keywords": [
+                "vue",
+                "vue.js"
+            ]
+        },
+        "has_html": {
+            "skill": "html",
+            "probability": 0.8,
+            "keywords": [
+                "html"
+            ]
+        },
+        "has_css": {
+            "skill": "css",
+            "probability": 0.75,
+            "keywords": [
+                "css"
+            ]
+        },
+        "has_typescript": {
+            "skill": "typescript",
+            "probability": 0.6,
+            "keywords": [
+                "typescript",
+                "ts"
+            ]
+        },
+        "has_nextjs": {
+            "skill": "Next.js/Nuxt.js (SSR/Meta Frameworks)",
+            "probability": 0.55,
+            "keywords": [
+                "next.js",
+                "nuxt.js",
+                "ssr",
+                "meta-framework"
+            ]
+        },
+        "has_state_management": {
+            "skill": "State Management (e.g., Redux, Zustand, Recoil)",
+            "probability": 0.65,
+            "keywords": [
+                "redux",
+                "zustand",
+                "recoil",
+                "state management"
+            ]
+        }
+    }
+}

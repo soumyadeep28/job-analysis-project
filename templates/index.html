@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Job Description Skill Analyzer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 160px;
+        }
+
+        /* compact textarea */
+        select,
+        button {
+            padding: 8px;
+            margin-top: 10px;
+        }
+
+        /* Result area kept to about half the screen width */
+        .result {
+            margin-top: 20px;
+            max-width: 600px;
+        }
+
+        .skill-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 4px 0;
+        }
+
+        .bar-container {
+            flex: 1;
+            margin-left: 10px;
+            margin-right: 10px;
+            background: #eee;
+            height: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .bar-fill {
+            height: 10px;
+            background: #2ecc71;
+            /* green */
+        }
+
+        .score {
+            width: 60px;
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Job Description Skill Analyzer</h1>
+
+    <form id="jd-form">
+        <label for="role">Role:</label>
+        <select id="role" name="role">
+            <option value="backend_engineer">Backend Engineer</option>
+            <option value="ml_engineer">ML Engineer</option>
+            <option value="ai_engineer">AI Engineer</option>
+            <option value="devops_engineer">DevOps Engineer</option>
+            <option value="data_scientist">Data Scientist</option>
+            <option value="frontend_engineer">Frontend Engineer</option>
+            <option value="job_all">Generic / Mixed</option>
+        </select>
+        <br><br>
+
+        <label for="jd">Job Description:</label><br>
+        <textarea id="jd" name="jd" placeholder="Paste the job description here..."></textarea>
+        <br>
+        <button type="submit">Analyze JD</button>
+    </form>
+
+    <div class="result" id="result" style="display:none;">
+        <h2>Analysis Result</h2>
+        <p><strong>Predicted interview focus score:</strong> <span id="score"></span></p>
+
+        <h3>Skills and relative importance</h3>
+        <div id="skills"></div>
+
+        <h3>Other skills detected</h3>
+        <ul id="other-skills"></ul>
+    </div>
+
+    <script>
+        document.getElementById("jd-form").addEventListener("submit", async function (e) {
+            e.preventDefault();
+            const jdText = document.getElementById("jd").value;
+            const role = document.getElementById("role").value;
+
+            if (!jdText.trim()) {
+                alert("Please paste a job description.");
+                return;
+            }
+
+            const payload = {
+                job_description: jdText,
+                role: role
+            };
+
+            const response = await fetch("/predict", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload)
+            });
+
+            if (!response.ok) {
+                alert("Error from server");
+                return;
+            }
+
+            const data = await response.json();
+            document.getElementById("result").style.display = "block";
+
+            // Overall score as percentage (0–100)
+            const focusPct = Math.round((data.predicted_score || 0) * 100);
+            document.getElementById("score").textContent = focusPct + " %";
+
+            // Configured skills with green bars
+            const skillsDiv = document.getElementById("skills");
+            skillsDiv.innerHTML = "";
+
+            const skills = data.skill_importance || {};
+            const entries = Object.entries(skills);
+
+            if (entries.length === 0) {
+                skillsDiv.innerHTML = "<p>No configured skills detected for this JD.</p>";
+            } else {
+                entries.forEach(([skill, importance]) => {
+                    const pct = Math.round((importance || 0) * 100);
+
+                    const row = document.createElement("div");
+                    row.className = "skill-row";
+
+                    const label = document.createElement("span");
+                    label.textContent = skill;
+
+                    const barContainer = document.createElement("div");
+                    barContainer.className = "bar-container";
+
+                    const barFill = document.createElement("div");
+                    barFill.className = "bar-fill";
+                    barFill.style.width = pct + "%";  // green bar
+
+                    barContainer.appendChild(barFill);
+
+                    const scoreSpan = document.createElement("span");
+                    scoreSpan.className = "score";
+                    scoreSpan.textContent = pct + " %";
+
+                    row.appendChild(label);
+                    row.appendChild(barContainer);
+                    row.appendChild(scoreSpan);
+
+                    skillsDiv.appendChild(row);
+                });
+            }
+
+            // Other skills detected (from SkillNer or similar)
+            const otherList = document.getElementById("other-skills");
+            otherList.innerHTML = "";
+            const otherSkills = data.other_skills || [];
+            if (otherSkills.length === 0) {
+                const li = document.createElement("li");
+                li.textContent = "No additional skills detected.";
+                otherList.appendChild(li);
+            } else {
+                otherSkills.forEach(s => {
+                    const li = document.createElement("li");
+                    li.textContent = s;
+                    otherList.appendChild(li);
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
